@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Performance Prediction System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+    <div class="header-content">
+        <img src="images/student.png" class="header-img">
+        <div>
+            <h1>Student Performance<br>Prediction System</h1>
+        </div>
+    </div>
+</div>
+
+<!-- FORM SECTION -->
+<div class="main-card">
+    <h2>Enter Student Details</h2>
+
+    <div class="form-group">
+        <label>Attendance (%)</label>
+        <input type="number" id="attendance" placeholder="Enter attendance">
+    </div>
+
+    <div class="form-group">
+        <label>Assignment Score (%)</label>
+        <input type="number" id="assignment" placeholder="Enter assignment score">
+    </div>
+
+    <div class="form-group">
+        <label>Internal Marks (%)</label>
+        <input type="number" id="internal" placeholder="Enter internal marks">
+    </div>
+
+    <div class="form-group">
+        <label>Previous Results (%)</label>
+        <input type="number" id="previous" placeholder="Enter previous results">
+    </div>
+
+    <button onclick="predictPerformance()">Predict Performance</button>
+</div>
+
+<!-- RESULT SECTION -->
+<div class="result-card">
+    <h2>Prediction Result</h2>
+    <div id="result-box"></div>
+</div>
+
+<!-- FEATURES -->
+<div class="features">
+    <div class="feature-box">
+        <img src="images/graduation.png">
+        <p>Early Warning</p>
+    </div>
+
+    <div class="feature-box">
+        <img src="images/analytics.png">
+        <p>Analytics</p>
+    </div>
+
+    <div class="feature-box">
+        <img src="images/idea.png">
+        <p>Improvement Tips</p>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
