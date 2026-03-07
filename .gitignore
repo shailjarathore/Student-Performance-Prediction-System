@@ -1,5 +1,12 @@
-# Secret credentials
-.env
-
-# Virtual environment
+# Virtual Environment
 venv/
+
+# Python cache
+__pycache__/
+*.pyo
+
+# ML model
+*.pkl
+
+# Environment variables
+.env
