@@ -419,7 +419,7 @@ function renderMarkBlocks(id, pct) {
     const threshold = (i / 10) * 100;
     let cls = 'mark-block';
     if (threshold < pct) cls += pct < 40 ? ' filled-low' : pct < 70 ? ' filled-mid' : ' filled-high';
-    html += <div class="${cls}"></div>;
+    html += `<div class="${cls}"></div>`;
   }
   container.innerHTML = html;
 }
@@ -476,7 +476,7 @@ async function runPrediction() {
     const { label, icon, cls } = levelMap[result.risk_level];
 
     document.getElementById('r_studentName').textContent = student.name;
-    document.getElementById('r_meta').textContent = ${student.roll_number} · ${student.department} · ${student.year};
+    document.getElementById('r_meta').textContent = `${student.roll_number} · ${student.department} · ${student.year}`;
     document.getElementById('r_iconWrap').className  = 'result-icon-wrap ' + cls;
     document.getElementById('r_icon').textContent    = icon;
     document.getElementById('r_verdict').className   = 'result-verdict ' + cls;
