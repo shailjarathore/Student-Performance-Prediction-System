@@ -2,6 +2,8 @@ from flask import Flask, render_template
 from flask_cors import CORS
 from config import Config
 from extensions import db
+from routes.reports import report_bp
+from routes.batch  import batch_bp
 
 def create_app():
     app = Flask(__name__)
@@ -17,10 +19,12 @@ def create_app():
 
     from routes.predict import predict_bp
     app.register_blueprint(predict_bp, url_prefix="/api/predict")
+    app.register_blueprint(report_bp)
+    app.register_blueprint(batch_bp)
 
     with app.app_context():
         db.create_all()
-        print("✅  Database tables created / verified.")
+        print("Database tables created / verified.")
 
     return app
 

@@ -828,6 +828,314 @@
       flex-wrap: wrap;
     }
 
+    /* ── BATCH PAGE ── */
+    .batch-page {
+      min-height: 100vh;
+      padding: 120px 60px 80px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .batch-wrap {
+      width: 100%;
+      max-width: 980px;
+    }
+
+    /* Drop zone */
+    .drop-zone {
+      border: 2px dashed var(--rim2);
+      border-radius: var(--r-xl);
+      padding: 60px 40px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.3s;
+      position: relative;
+      background: var(--glass);
+    }
+
+    .drop-zone:hover,
+    .drop-zone.drag-over {
+      border-color: var(--cyan);
+      background: rgba(0, 212, 255, 0.04);
+      box-shadow: 0 0 40px rgba(0, 212, 255, 0.08);
+    }
+
+    .drop-zone input[type=file] {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      cursor: pointer;
+      width: 100%;
+      height: 100%;
+    }
+
+    .drop-icon {
+      font-size: 48px;
+      margin-bottom: 16px;
+    }
+
+    .drop-title {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .drop-sub {
+      font-size: 13px;
+      color: var(--text2);
+      font-weight: 300;
+      margin-bottom: 20px;
+    }
+
+    .drop-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 16px;
+      border: 1px solid var(--rim2);
+      border-radius: 100px;
+      font-family: var(--ff-mono);
+      font-size: 10px;
+      color: var(--text3);
+      letter-spacing: 1px;
+    }
+
+    /* Template strip */
+    .template-strip {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 24px;
+      background: var(--glass);
+      border: 1px solid var(--rim);
+      border-radius: var(--r-md);
+      margin: 20px 0;
+    }
+
+    .template-strip-left {
+      font-size: 13px;
+      color: var(--text2);
+    }
+
+    .template-strip-left strong {
+      color: var(--text);
+      display: block;
+      margin-bottom: 2px;
+      font-size: 14px;
+    }
+
+    /* Progress */
+    .batch-progress {
+      padding: 28px 32px;
+      margin: 20px 0;
+      display: none;
+    }
+
+    .progress-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+
+    .progress-title {
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    .progress-count {
+      font-family: var(--ff-mono);
+      font-size: 12px;
+      color: var(--cyan);
+    }
+
+    .progress-bar-wrap {
+      height: 6px;
+      background: var(--rim2);
+      border-radius: 3px;
+      overflow: hidden;
+      margin-bottom: 12px;
+    }
+
+    .progress-bar-fill {
+      height: 100%;
+      border-radius: 3px;
+      background: linear-gradient(90deg, var(--cyan2), var(--cyan));
+      width: 0%;
+      transition: width 0.3s ease;
+    }
+
+    .progress-sub {
+      font-size: 12px;
+      color: var(--text3);
+      font-family: var(--ff-mono);
+    }
+
+    /* Summary stats */
+    .batch-summary {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin: 20px 0;
+    }
+
+    .summary-stat {
+      padding: 20px 24px;
+      text-align: center;
+    }
+
+    .summary-stat-val {
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: -1px;
+      margin-bottom: 4px;
+    }
+
+    .summary-stat-lbl {
+      font-family: var(--ff-mono);
+      font-size: 9px;
+      letter-spacing: 2px;
+      color: var(--text3);
+      text-transform: uppercase;
+    }
+
+    .s-total {
+      color: var(--cyan);
+    }
+
+    .s-high {
+      color: var(--green);
+    }
+
+    .s-mid {
+      color: var(--amber);
+    }
+
+    .s-low {
+      color: var(--red);
+    }
+
+    /* Results table */
+    .batch-table-wrap {
+      overflow-x: auto;
+      border-radius: var(--r-xl);
+      border: 1px solid var(--rim);
+      background: var(--panel);
+      backdrop-filter: blur(24px);
+      margin: 20px 0;
+    }
+
+    .batch-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .batch-table thead tr {
+      border-bottom: 1px solid var(--rim2);
+    }
+
+    .batch-table th {
+      font-family: var(--ff-mono);
+      font-size: 9px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--text3);
+      padding: 14px 20px;
+      text-align: left;
+      white-space: nowrap;
+    }
+
+    .batch-table td {
+      padding: 14px 20px;
+      font-size: 13px;
+      color: var(--text2);
+      border-bottom: 1px solid var(--rim);
+      white-space: nowrap;
+    }
+
+    .batch-table tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    .batch-table tbody tr:hover td {
+      background: var(--glass);
+    }
+
+    .batch-table td.td-name {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .badge-risk {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 100px;
+      font-family: var(--ff-mono);
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .badge-risk.high {
+      background: rgba(0, 229, 160, 0.12);
+      color: var(--green);
+      border: 1px solid rgba(0, 229, 160, 0.3);
+    }
+
+    .badge-risk.medium {
+      background: rgba(255, 149, 0, 0.12);
+      color: var(--amber);
+      border: 1px solid rgba(255, 149, 0, 0.3);
+    }
+
+    .badge-risk.low {
+      background: rgba(255, 69, 96, 0.12);
+      color: var(--red);
+      border: 1px solid rgba(255, 69, 96, 0.3);
+    }
+
+    .batch-table td.td-score {
+      font-family: var(--ff-mono);
+      font-size: 13px;
+      color: var(--text);
+    }
+
+    .batch-table td.td-grade {
+      font-family: var(--ff-mono);
+      font-weight: 700;
+      color: var(--gold);
+    }
+
+    .batch-actions {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 24px;
+    }
+
+    /* Error row */
+    .batch-table tr.row-error td {
+      color: var(--red);
+      opacity: 0.7;
+    }
+
+    @media (max-width: 900px) {
+      .batch-page {
+        padding: 100px 24px 60px;
+      }
+
+      .batch-summary {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .drop-zone {
+        padding: 40px 20px;
+      }
+    }
+
     /* ── LANDING PAGE ── */
     .landing-page {
       min-height: 100vh;
@@ -1287,8 +1595,11 @@
         <div class="nav-tagline">AI Performance Engine</div>
       </div>
     </a>
-    <button class="btn-gold nav-launch" onclick="showForm()" style="padding:10px 24px;font-size:13px;">Run
-      Analysis→</button>
+    <div style="margin-left:auto;display:flex;gap:10px;align-items:center;">
+      <button class="btn-secondary" onclick="showBatch()" style="padding:10px 24px;font-size:13px;">⬆ Batch
+        Upload</button>
+      <button class="btn-gold" onclick="showForm()" style="padding:10px 24px;font-size:13px;">Run Analysis→</button>
+    </div>
   </nav>
 
   <!-- LANDING PAGE -->
@@ -1394,9 +1705,9 @@
 
       <!-- Features -->
       <section class="section" style="padding-top:0">
-        <div class="section-label">What We Offer</div>
-        <h2 class="section-title">Features</h2>
-        <p class="section-desc">Everything you need to make data-driven academic decisions.</p>
+        <div class="section-label">Features</div>
+        <h2 class="section-title">Built for Faculty</h2>
+        <p class="section-desc">Everything a teacher needs to make data-driven academic decisions.</p>
         <div class="features-grid">
           <div class="feat-card card">
             <div class="feat-icon-wrap c1">🎯</div>
@@ -1657,24 +1968,292 @@
     </div>
   </div>
 
+  <div id="pg-batch" class="page-wrap">
+    <div class="batch-page">
+
+      <div class="form-page-header anim-1">
+        <div class="section-label" style="justify-content:center">Batch Mode</div>
+        <h1 class="form-page-title">CSV Batch Upload</h1>
+        <p class="form-page-desc">Upload a CSV of multiple students and get predictions for all of them at once.</p>
+      </div>
+
+      <div class="batch-wrap">
+
+        <div class="template-strip anim-2">
+          <div class="template-strip-left">
+            <strong>📄 CSV Format Required</strong>
+            name, roll_number, department, year, attendance, study_hours, internal_marks, assignment_score,
+            midterm_score, extracurricular
+          </div>
+        </div>
+
+
+        <div class="drop-zone card anim-3" id="dropZone">
+          <input type="file" id="csvFileInput" accept=".csv" onchange="handleFileSelect(this.files[0])">
+          <div class="drop-icon">📂</div>
+          <div class="drop-title">Drop your CSV here</div>
+          <div class="drop-sub">or click anywhere in this box to browse files</div>
+          <div class="drop-badge">CSV files only · max 500 rows</div>
+        </div>
+
+
+        <div class="batch-progress card" id="batchProgress">
+          <div class="progress-header">
+            <span class="progress-title">⟳ Processing students…</span>
+            <span class="progress-count" id="progressCount">0 / 0</span>
+          </div>
+          <div class="progress-bar-wrap">
+            <div class="progress-bar-fill" id="progressFill"></div>
+          </div>
+          <div class="progress-sub" id="progressSub">Starting…</div>
+        </div>
+
+
+        <div id="batchSummary" style="display:none">
+          <div class="batch-summary">
+            <div class="summary-stat card">
+              <div class="summary-stat-val s-total" id="st_total">0</div>
+              <div class="summary-stat-lbl">Total Processed</div>
+            </div>
+            <div class="summary-stat card">
+              <div class="summary-stat-val s-high" id="st_high">0</div>
+              <div class="summary-stat-lbl">High Performance</div>
+            </div>
+            <div class="summary-stat card">
+              <div class="summary-stat-val s-mid" id="st_mid">0</div>
+              <div class="summary-stat-lbl">Medium Risk</div>
+            </div>
+            <div class="summary-stat card">
+              <div class="summary-stat-val s-low" id="st_low">0</div>
+              <div class="summary-stat-lbl">At Risk</div>
+            </div>
+          </div>
+
+
+          <div class="batch-table-wrap">
+            <table class="batch-table">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Name</th>
+                  <th>Roll No.</th>
+                  <th>Dept</th>
+                  <th>Year</th>
+                  <th>Score</th>
+                  <th>Grade</th>
+                  <th>Risk Level</th>
+                </tr>
+              </thead>
+              <tbody id="batchTableBody"></tbody>
+            </table>
+          </div>
+
+          <div class="batch-actions">
+            <button class="btn-secondary" onclick="resetBatch()">← Upload Another</button>
+            <button class="btn-secondary" onclick="showLanding()">← Home</button>
+            <button class="btn-primary" onclick="downloadBatchCSV()">⬇ Export Results CSV</button>
+            <button class="btn-gold" onclick="downloadBatchPDF()">⬇ Download Batch PDF</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
   <script>
     function showLanding() {
-      document.getElementById('pg-form').classList.remove('active');
-      document.getElementById('pg-result').classList.remove('active');
+      ['pg-form', 'pg-result', 'pg-batch'].forEach(id => document.getElementById(id).classList.remove('active'));
       document.getElementById('pg-landing').classList.add('active');
       window.scrollTo(0, 0);
     }
     function showForm() {
-      document.getElementById('pg-landing').classList.remove('active');
-      document.getElementById('pg-result').classList.remove('active');
+      ['pg-landing', 'pg-result', 'pg-batch'].forEach(id => document.getElementById(id).classList.remove('active'));
       document.getElementById('pg-form').classList.add('active');
       window.scrollTo(0, 0);
     }
     function showResult() {
-      document.getElementById('pg-landing').classList.remove('active');
-      document.getElementById('pg-form').classList.remove('active');
+      ['pg-landing', 'pg-form', 'pg-batch'].forEach(id => document.getElementById(id).classList.remove('active'));
       document.getElementById('pg-result').classList.add('active');
       window.scrollTo(0, 0);
+    }
+    function showBatch() {
+      ['pg-landing', 'pg-form', 'pg-result'].forEach(id => document.getElementById(id).classList.remove('active'));
+      document.getElementById('pg-batch').classList.add('active');
+      window.scrollTo(0, 0);
+    }
+
+    const dropZone = document.getElementById('dropZone');
+    dropZone.addEventListener('dragover', e => { e.preventDefault(); dropZone.classList.add('drag-over'); });
+    dropZone.addEventListener('dragleave', () => dropZone.classList.remove('drag-over'));
+    dropZone.addEventListener('drop', e => {
+      e.preventDefault();
+      dropZone.classList.remove('drag-over');
+      const file = e.dataTransfer.files[0];
+      if (file && file.name.endsWith('.csv')) handleFileSelect(file);
+      else alert('Please drop a .csv file.');
+    });
+
+
+    function parseCSV(text) {
+      const lines = text.trim().split('\n').map(l => l.trim()).filter(Boolean);
+      if (lines.length < 2) throw new Error('CSV must have a header row and at least one data row.');
+      const headers = lines[0].split(',').map(h => h.trim().toLowerCase().replace(/\s+/g, '_'));
+      return lines.slice(1).map((line, i) => {
+        const vals = line.split(',').map(v => v.trim());
+        if (vals.length !== headers.length) throw new Error(`Row ${i + 2}: column count mismatch.`);
+        const obj = {};
+        headers.forEach((h, j) => obj[h] = vals[j]);
+        return obj;
+      });
+    }
+
+    let _batchResults = [];
+
+    async function handleFileSelect(file) {
+      if (!file) return;
+      const text = await file.text();
+      let rows;
+      try { rows = parseCSV(text); }
+      catch (e) { alert('❌ CSV Error: ' + e.message); return; }
+
+      if (rows.length > 500) { alert('❌ Maximum 500 rows allowed.'); return; }
+
+      // Show progress
+      document.getElementById('batchProgress').style.display = 'block';
+      document.getElementById('batchSummary').style.display = 'none';
+      document.getElementById('dropZone').style.display = 'none';
+      document.querySelector('.template-strip').style.display = 'none';
+
+      _batchResults = [];
+      let done = 0;
+      const total = rows.length;
+
+      for (const row of rows) {
+        document.getElementById('progressCount').textContent = `${done} / ${total}`;
+        document.getElementById('progressFill').style.width = `${(done / total) * 100}%`;
+        document.getElementById('progressSub').textContent = `Processing: ${row.name || 'row ' + (done + 1)}`;
+
+        try {
+          const res = await fetch('http://127.0.0.1:5000/api/predict/', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              name: row.name || '',
+              roll_number: row.roll_number || '',
+              department: row.department || '',
+              year: row.year || '',
+              attendance: parseFloat(row.attendance) || 0,
+              study_hours: parseFloat(row.study_hours) || 0,
+              internal_marks: parseFloat(row.internal_marks) || 0,
+              assignment_score: parseFloat(row.assignment_score) || 0,
+              midterm_score: parseFloat(row.midterm_score) || 0,
+              extracurricular: parseFloat(row.extracurricular) || 0,
+            })
+          });
+          if (!res.ok) { const e = await res.json(); throw new Error(e.error || 'Server error'); }
+          const data = await res.json();
+          _batchResults.push({ ...data.data, _error: null });
+        } catch (e) {
+          _batchResults.push({ student: { name: row.name, roll_number: row.roll_number, department: row.department, year: row.year }, _error: e.message });
+        }
+        done++;
+      }
+
+
+      document.getElementById('progressCount').textContent = `${done} / ${total}`;
+      document.getElementById('progressFill').style.width = '100%';
+      document.getElementById('progressSub').textContent = 'Done!';
+      setTimeout(() => {
+        document.getElementById('batchProgress').style.display = 'none';
+        renderBatchResults();
+      }, 600);
+    }
+
+    function renderBatchResults() {
+      let high = 0, mid = 0, low = 0, errors = 0;
+      const tbody = document.getElementById('batchTableBody');
+      tbody.innerHTML = '';
+
+      _batchResults.forEach((r, i) => {
+        const tr = document.createElement('tr');
+        if (r._error) {
+          errors++;
+          tr.className = 'row-error';
+          tr.innerHTML = `<td>${i + 1}</td><td class="td-name">${r.student?.name || '—'}</td><td>${r.student?.roll_number || '—'}</td><td colspan="5" style="color:var(--red)">Error: ${r._error}</td>`;
+        } else {
+          const rl = r.result.risk_level;
+          if (rl === 'High') high++; else if (rl === 'Medium') mid++; else low++;
+          const clsMap = { High: 'high', Medium: 'medium', Low: 'low' };
+          tr.innerHTML = `
+        <td>${i + 1}</td>
+        <td class="td-name">${r.student.name}</td>
+        <td>${r.student.roll_number}</td>
+        <td>${r.student.department}</td>
+        <td>${r.student.year}</td>
+        <td class="td-score">${r.result.composite_score}</td>
+        <td class="td-grade">${r.result.predicted_grade}</td>
+        <td><span class="badge-risk ${clsMap[rl]}">${rl}</span></td>`;
+        }
+        tbody.appendChild(tr);
+      });
+
+      const total = _batchResults.length;
+      document.getElementById('st_total').textContent = total;
+      document.getElementById('st_high').textContent = high;
+      document.getElementById('st_mid').textContent = mid;
+      document.getElementById('st_low').textContent = low;
+      document.getElementById('batchSummary').style.display = 'block';
+    }
+
+    function resetBatch() {
+      _batchResults = [];
+      document.getElementById('batchProgress').style.display = 'none';
+      document.getElementById('batchSummary').style.display = 'none';
+      document.getElementById('dropZone').style.display = 'block';
+      document.querySelector('.template-strip').style.display = 'flex';
+      document.getElementById('csvFileInput').value = '';
+    }
+
+    function downloadBatchCSV() {
+      const header = 'Name,Roll Number,Department,Year,Composite Score,Predicted Grade,Risk Level,Risk Score';
+      const rows = _batchResults.map(r => {
+        if (r._error) return `${r.student?.name || ''},${r.student?.roll_number || ''},,,,,Error,`;
+        return [r.student.name, r.student.roll_number, r.student.department, r.student.year,
+        r.result.composite_score, r.result.predicted_grade, r.result.risk_level, r.result.risk_score].join(',');
+      });
+      const blob = new Blob([header + '\n' + rows.join('\n')], { type: 'text/csv' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = `NEXUS_Batch_Results_${new Date().toISOString().slice(0, 10)}.csv`;
+      a.click();
+    }
+
+    async function downloadBatchPDF() {
+      const btn = document.querySelector('.batch-actions .btn-gold');
+      btn.textContent = '⟳ Generating PDF…';
+      btn.disabled = true;
+      btn.style.opacity = '0.7';
+      try {
+        const payload = _batchResults.filter(r => !r._error);
+        const res = await fetch('http://127.0.0.1:5000/api/batch/report/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ results: payload })
+        });
+        if (!res.ok) { const e = await res.json(); throw new Error(e.error); }
+        const blob = await res.blob();
+        const a = document.createElement('a');
+        a.href = URL.createObjectURL(blob);
+        a.download = `NEXUS_Batch_Report_${new Date().toISOString().slice(0, 10)}.pdf`;
+        document.body.appendChild(a); a.click(); document.body.removeChild(a);
+        URL.revokeObjectURL(a.href);
+      } catch (err) {
+        alert(err.message.includes('fetch') ? '❌ Flask server not running.' : '❌ ' + err.message);
+      } finally {
+        btn.textContent = '⬇ Download Batch PDF';
+        btn.disabled = false;
+        btn.style.opacity = '1';
+      }
     }
 
     function updateSlider(id, unit, min, max) {
@@ -1824,7 +2403,7 @@
       </div>
     `).join('');
 
-        // Store for PDF download
+
         window._lastPrediction = { student, result, recommendations: recos };
 
         showResult();
