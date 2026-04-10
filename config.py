@@ -1,11 +1,10 @@
-class Config:
-    #Security
-    SECRET_KEY = "nexus-project"
-    SQLALCHEMY_DATABASE_URI = (
-        "mysql+pymysql://root:@localhost/student_performance_db"
-    )
+import os
 
-    # Disable event tracking
+class Config:
+    SECRET_KEY = "nexus-project"
+    SQLALCHEMY_DATABASE_URI = "sqlite:///site.db"
+
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
-    MODEL_PATH = "ml/model.pkl"
+    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+    MODEL_PATH = os.path.join(BASE_DIR, "ml", "model.pkl")

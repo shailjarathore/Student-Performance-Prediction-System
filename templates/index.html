@@ -2426,7 +2426,7 @@
       document.getElementById('f_roll').value = roll;
 
       try {
-        const res = await fetch(`http://127.0.0.1:5000/api/predict/student/${roll}`);
+        const res = await fetch(`/api/predict/student/${roll}`);
         const data = await res.json();
 
         if (data.found) {
@@ -2665,7 +2665,7 @@
       if (marksTrendInst) { marksTrendInst.destroy(); marksTrendInst = null; }
 
       try {
-        const res = await fetch(`http://127.0.0.1:5000/api/predict/student/${rollNumber}/history`);
+        const res = await fetch(`/api/predict/student/${rollNumber}/history`);
         if (!res.ok) return;
         const data = await res.json();
 
@@ -2814,7 +2814,7 @@
       btn.disabled = true; btn.style.opacity = '0.7';
 
       try {
-        const res = await fetch('http://127.0.0.1:5000/api/predict/', {
+        const res = await fetch('/api/predict/', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
@@ -2895,7 +2895,7 @@
         document.getElementById('progressSub').textContent = `Processing: ${row.name || 'row ' + (done + 1)}`;
 
         try {
-          const res = await fetch('http://127.0.0.1:5000/api/predict/', {
+          const res = await fetch('/api/predict/', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
@@ -2996,7 +2996,7 @@
       btn.style.opacity = '0.7';
       try {
         const payload = _batchResults.filter(r => !r._error);
-        const res = await fetch('http://127.0.0.1:5000/api/batch/report/', {
+        const res = await fetch('/api/batch/report/', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ results: payload })
@@ -3047,7 +3047,7 @@
       btn.disabled = true;
       btn.style.opacity = '0.7';
       try {
-        const res = await fetch('http://127.0.0.1:5000/api/report/', {
+        const res = await fetch('/api/report/', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(window._lastPrediction)
