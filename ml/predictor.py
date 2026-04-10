@@ -1,7 +1,3 @@
-"""
-ml/predictor.py - Machine Learning engine
-Decision Tree classifier with 6 academic features.
-"""
 import os, joblib
 import numpy as np
 import pandas as pd

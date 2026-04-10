@@ -2,7 +2,6 @@ import csv
 import io
 import datetime
 from flask import Blueprint, request, jsonify, send_file
-from ml.predictor import predict         
 
 batch_bp = Blueprint('batch', __name__)
 
